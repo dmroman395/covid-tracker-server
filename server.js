@@ -1,7 +1,12 @@
 const express = require('express')
 const axios = require('axios')
 const cors = require('cors')
+
+require('dotenv').config()
+
+
 const port = process.env.PORT || 3000;
+
 
 const app = express()
 
@@ -16,12 +21,11 @@ app.get('/coordinates', (req, res) => {
         params: {latlng: `42.88544,-78.87846`, result_type: 'country', language: 'en'},
         headers: {
           'x-rapidapi-host': 'google-maps-geocoding.p.rapidapi.com',
-          'x-rapidapi-key': process.env.NEXT_PUBLIC_GEOCODING_API_KEY
+          'x-rapidapi-key': process.env.GEOCODING_API_KEY
         }
       };
 
       axios.request(options).then(response =>  {
-          console.log(options.params.latlng)
        res.json({country: response.data.results[0].formatted_address})
     }).catch(error => {
         console.error(error);
