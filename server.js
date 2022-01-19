@@ -26,7 +26,10 @@ app.get('/coordinates', (req, res) => {
       };
 
       axios.request(options).then(response =>  {
-       res.json({country: response.data.results[0].formatted_address})
+       res.json({
+         country: response.data.results[0].formatted_address,
+         countryCode: response.data.results[0].address_components[0].short_name
+        })
     }).catch(error => {
         console.error(error);
     });
