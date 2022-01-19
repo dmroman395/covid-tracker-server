@@ -9,11 +9,11 @@ app.use(cors())
 
 app.get('/', (req,res) => res.send("Listening for requests..."))
 
-app.get('/coordinates?lat=:lat&=lon=:lon', (req, res) => {
+app.get('/coordinates', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://google-maps-geocoding.p.rapidapi.com/geocode/json',
-        params: {latlng: `${req.query.lat},${req.query.lon}`, result_type: 'country', language: 'en'},
+        params: {latlng: `42.88544,-78.87846`, result_type: 'country', language: 'en'},
         headers: {
           'x-rapidapi-host': 'google-maps-geocoding.p.rapidapi.com',
           'x-rapidapi-key': process.env.NEXT_PUBLIC_GEOCODING_API_KEY
