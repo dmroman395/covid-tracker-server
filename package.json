@@ -1,0 +1,27 @@
+{
+  "name": "covid-tracker-server",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000c\u0000o\u0000v\u0000i\u0000d\u0000-\u0000t\u0000r\u0000a\u0000c\u0000k\u0000e\u0000r\u0000-\u0000s\u0000e\u0000r\u0000v\u0000e\u0000r\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmroman395/covid-tracker-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmroman395/covid-tracker-server/issues"
+  },
+  "homepage": "https://github.com/dmroman395/covid-tracker-server#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2"
+  }
+}
