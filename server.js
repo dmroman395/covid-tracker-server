@@ -7,7 +7,7 @@ const app = express()
 
 app.use(cors())
 
-app.get('/', (req,res) => res.send("Testing"))
+app.get('/', (req,res) => res.send("Listening for requests..."))
 
 app.get('/coordinates?lat=:lat&=lon=:lon', (req, res) => {
     const options = {
