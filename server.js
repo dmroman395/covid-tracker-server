@@ -14,7 +14,7 @@ app.use(cors())
 
 app.get('/', (req,res) => res.send("Listening for requests..."))
 
-app.get('/coordinates', (req, res) => {
+app.get('/coordinates?lat=:lat&=lon=:lon', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://google-maps-geocoding.p.rapidapi.com/geocode/json',
