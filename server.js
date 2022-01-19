@@ -21,6 +21,7 @@ app.get('/coordinates?lat=:lat&=lon=:lon', (req, res) => {
       };
 
       axios.request(options).then(response =>  {
+          console.log(options.params.latlng)
        res.json({country: response.data.results[0].formatted_address})
     }).catch(error => {
         console.error(error);
