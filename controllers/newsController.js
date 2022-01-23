@@ -1,4 +1,3 @@
-// import res from 'express/lib/response';
 const axios = require('axios')
 require('dotenv').config()
 

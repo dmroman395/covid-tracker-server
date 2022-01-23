@@ -22,5 +22,27 @@ async function getCountryFromCoordinates(req, res) {
      });
 }
 
-module.exports = getCountryFromCoordinates 
+async function getCoordinatesFromCountry(req, res) {
+  const options = {
+      method: 'GET',
+      url: 'https://google-maps-geocoding.p.rapidapi.com/geocode/json',
+      params: {country: `${req.query.country}`, language: 'en'},
+      headers: {
+        'x-rapidapi-host': 'google-maps-geocoding.p.rapidapi.com',
+        'x-rapidapi-key': process.env.GEOCODING_API_KEY
+      }
+    };
+    
+  axios.request(options).then(response =>  {
+      res.json({
+        ...response})
+   }).catch(error => {
+       console.error(error);
+   });
+}
+
+module.exports =  {
+  getCountryFromCoordinates,
+  getCoordinatesFromCountry
+}
   
