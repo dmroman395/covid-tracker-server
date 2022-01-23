@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const getCoordinatesFromCountry = require('../controllers/geocodingController')
+const geoController = require('../controllers/geocodingController')
 
-router.get('/', getCoordinatesFromCountry)
+router.get('/', geoController.getCoordinatesFromCountry)
 
 module.exports = router
