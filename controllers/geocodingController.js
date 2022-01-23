@@ -34,11 +34,12 @@ async function getCoordinatesFromCountry(req, res) {
     };
     
   axios.request(options).then(response =>  {
-    const coordinates = {
+    const data = {
       lat: response.data.results[0].geometry.location.lat,
-      lon: response.data.results[0].geometry.location.lng
+      lon: response.data.results[0].geometry.location.lng,
+      code: response.data.results[0].address_components[0].short_name
     }
-      res.json(coordinates)
+      res.json(data)
    }).catch(error => {
        console.error(error);
    });
