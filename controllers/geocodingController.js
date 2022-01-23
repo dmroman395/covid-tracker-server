@@ -37,7 +37,8 @@ async function getCoordinatesFromCountry(req, res) {
     const data = {
       lat: response.data.results[0].geometry.location.lat,
       lon: response.data.results[0].geometry.location.lng,
-      code: response.data.results[0].address_components[0].short_name
+      code: response.data.results[0].address_components[0].short_name,
+      name: response.data.results[0].address_components[0].long_name
     }
       res.json(data)
    }).catch(error => {
