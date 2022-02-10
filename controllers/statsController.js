@@ -12,7 +12,7 @@ async function getStats(req, res) {
       };
       
       axios.request(options).then((response) => {
-          res.json({stats: response.data.stats})
+          res.send(response.data.stats)
       }).catch(error => {
           console.error(error);
       });
