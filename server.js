@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const data = require('./globalData')
 require('dotenv').config()
 
 const locationRouter = require('./routes/location.js')
@@ -13,7 +14,7 @@ const app = express()
 
 app.use(cors())
 
-app.get('/', (req,res) => res.send("Listening for requests..."))
+app.get('/', (req,res) => res.send(data))
 
 app.use('/coordinates', locationRouter)
 
