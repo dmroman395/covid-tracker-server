@@ -12,7 +12,7 @@ async function getNews(req, res) {
       };
       
       axios.request(options).then((response) => {
-          res.json({news : response.data.news})
+          res.send(response.data.news)
       }).catch(error => {
           console.error(error);
       });
