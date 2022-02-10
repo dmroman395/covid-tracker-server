@@ -42,7 +42,7 @@ async function getCoordinatesFromCountry(req, res) {
     }
       res.json(data)
    }).catch(error => {
-       console.error(error);
+       res.send(error)
    });
 }
 
